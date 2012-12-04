@@ -7,7 +7,6 @@ package clientlourdjava;
 import com.webservices.externe.InfoPersonne;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -184,6 +183,10 @@ public class PageAccueil extends javax.swing.JFrame {
         InfoPersonne rip = new InfoPersonne();
         rip.setNom(jTextField1.getText());
         rip.setPrenom(jTextField2.getText());
+        if(jComboBox1.getSelectedItem() == "F")
+        {
+            rip.setSexe(true);
+        }
         List<InfoPersonne> ListIP = pxy.recherchePersonnes(rip, jCheckBox1.isSelected());
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         model.getDataVector().removeAllElements();
@@ -195,11 +198,11 @@ public class PageAccueil extends javax.swing.JFrame {
             ti[2] = ip.getPrenom();
             if(ip.isSexe())
             {
-                ti[3] = "M";
+                ti[3] = "F";
             }
             else
             {
-                ti[3] = "F";
+                ti[3] = "M";
             }
             ti[4] = ip.getDateNaissance();
             model.addRow(ti);           

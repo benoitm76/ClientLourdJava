@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://interne.webservices.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://interne.webservices.com/">
+
+<xs:element name="Connexion" type="tns:Connexion"/>
+
+<xs:element name="ConnexionResponse" type="tns:ConnexionResponse"/>
+
+<xs:element name="utilisateur" type="tns:utilisateur"/>
+
+<xs:complexType name="Connexion">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConnexionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:utilisateur" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="utilisateur">
+<xs:sequence>
+<xs:element name="idutil" type="xs:decimal" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="mdp" type="xs:string" minOccurs="0"/>
+<xs:element name="nomutil" type="xs:string" minOccurs="0"/>
+<xs:element name="prenomutil" type="xs:string" minOccurs="0"/>
+<xs:element name="role" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -4,6 +4,10 @@
  */
 package clientlourdjava;
 
+import com.webservices.interne.Utilisateur;
+import java.awt.TrayIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Benoît
@@ -13,8 +17,12 @@ public class ConnexionForm extends javax.swing.JFrame {
     /**
      * Creates new form ConnexionForm
      */
+    
+    private com.webservices.interne.Utilisateurs pxy;
+    
     public ConnexionForm() {
         initComponents();
+        pxy = new com.webservices.interne.Utilisateurs_Service().getUtilisateursPort();
         this.setLocationRelativeTo(null);
     }
 
@@ -107,7 +115,16 @@ public class ConnexionForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new PageAccueil().setVisible(true);
+        Utilisateur u = pxy.connexion(jTextField1.getText(), jTextField2.getText());
+        if(u == null)
+        {
+           JOptionPane.showMessageDialog(this, "Login et/ou mot de passe incorrecte !", "Echec de la connexion", JOptionPane.ERROR_MESSAGE);  
+        }
+        else
+        {
+            new PageAccueil().setVisible(true);
+            this.dispose();
+        }    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
