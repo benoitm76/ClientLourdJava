@@ -10,6 +10,12 @@
 <message name="testResponse">
 <part name="parameters" element="tns:testResponse"/>
 </message>
+<message name="hello">
+<part name="parameters" element="tns:hello"/>
+</message>
+<message name="helloResponse">
+<part name="parameters" element="tns:helloResponse"/>
+</message>
 <message name="RecherchePersonne">
 <part name="parameters" element="tns:RecherchePersonne"/>
 </message>
@@ -22,10 +28,20 @@
 <message name="GetPersonneResponse">
 <part name="parameters" element="tns:GetPersonneResponse"/>
 </message>
+<message name="GetAllPersonnes">
+<part name="parameters" element="tns:GetAllPersonnes"/>
+</message>
+<message name="GetAllPersonnesResponse">
+<part name="parameters" element="tns:GetAllPersonnesResponse"/>
+</message>
 <portType name="WebServicePersonne">
 <operation name="test">
 <input wsam:Action="http://externe.webservices.com/WebServicePersonne/testRequest" message="tns:test"/>
 <output wsam:Action="http://externe.webservices.com/WebServicePersonne/testResponse" message="tns:testResponse"/>
+</operation>
+<operation name="hello">
+<input wsam:Action="http://externe.webservices.com/WebServicePersonne/helloRequest" message="tns:hello"/>
+<output wsam:Action="http://externe.webservices.com/WebServicePersonne/helloResponse" message="tns:helloResponse"/>
 </operation>
 <operation name="RecherchePersonne">
 <input wsam:Action="http://externe.webservices.com/WebServicePersonne/RecherchePersonneRequest" message="tns:RecherchePersonne"/>
@@ -34,6 +50,10 @@
 <operation name="GetPersonne">
 <input wsam:Action="http://externe.webservices.com/WebServicePersonne/GetPersonneRequest" message="tns:GetPersonne"/>
 <output wsam:Action="http://externe.webservices.com/WebServicePersonne/GetPersonneResponse" message="tns:GetPersonneResponse"/>
+</operation>
+<operation name="GetAllPersonnes">
+<input wsam:Action="http://externe.webservices.com/WebServicePersonne/GetAllPersonnesRequest" message="tns:GetAllPersonnes"/>
+<output wsam:Action="http://externe.webservices.com/WebServicePersonne/GetAllPersonnesResponse" message="tns:GetAllPersonnesResponse"/>
 </operation>
 </portType>
 <binding name="WebServicePersonnePortBinding" type="tns:WebServicePersonne">
@@ -47,6 +67,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="RecherchePersonne">
 <soap:operation soapAction=""/>
 <input>
@@ -57,6 +86,15 @@
 </output>
 </operation>
 <operation name="GetPersonne">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GetAllPersonnes">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
