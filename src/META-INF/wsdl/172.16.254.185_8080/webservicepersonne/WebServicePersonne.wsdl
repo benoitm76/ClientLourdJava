@@ -34,6 +34,18 @@
 <message name="GetAllPersonnesResponse">
 <part name="parameters" element="tns:GetAllPersonnesResponse"/>
 </message>
+<message name="RecherchePersonnes">
+<part name="parameters" element="tns:RecherchePersonnes"/>
+</message>
+<message name="RecherchePersonnesResponse">
+<part name="parameters" element="tns:RecherchePersonnesResponse"/>
+</message>
+<message name="RemplirInfoPersonne">
+<part name="parameters" element="tns:RemplirInfoPersonne"/>
+</message>
+<message name="RemplirInfoPersonneResponse">
+<part name="parameters" element="tns:RemplirInfoPersonneResponse"/>
+</message>
 <portType name="WebServicePersonne">
 <operation name="test">
 <input wsam:Action="http://externe.webservices.com/WebServicePersonne/testRequest" message="tns:test"/>
@@ -54,6 +66,14 @@
 <operation name="GetAllPersonnes">
 <input wsam:Action="http://externe.webservices.com/WebServicePersonne/GetAllPersonnesRequest" message="tns:GetAllPersonnes"/>
 <output wsam:Action="http://externe.webservices.com/WebServicePersonne/GetAllPersonnesResponse" message="tns:GetAllPersonnesResponse"/>
+</operation>
+<operation name="RecherchePersonnes">
+<input wsam:Action="http://externe.webservices.com/WebServicePersonne/RecherchePersonnesRequest" message="tns:RecherchePersonnes"/>
+<output wsam:Action="http://externe.webservices.com/WebServicePersonne/RecherchePersonnesResponse" message="tns:RecherchePersonnesResponse"/>
+</operation>
+<operation name="RemplirInfoPersonne">
+<input wsam:Action="http://externe.webservices.com/WebServicePersonne/RemplirInfoPersonneRequest" message="tns:RemplirInfoPersonne"/>
+<output wsam:Action="http://externe.webservices.com/WebServicePersonne/RemplirInfoPersonneResponse" message="tns:RemplirInfoPersonneResponse"/>
 </operation>
 </portType>
 <binding name="WebServicePersonnePortBinding" type="tns:WebServicePersonne">
@@ -95,6 +115,24 @@
 </output>
 </operation>
 <operation name="GetAllPersonnes">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="RecherchePersonnes">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="RemplirInfoPersonne">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

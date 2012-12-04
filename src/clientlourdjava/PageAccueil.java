@@ -180,9 +180,13 @@ public class PageAccueil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        List<InfoPersonne> ListIP = pxy.getAllPersonnes();
+        // TODO add your handling code here:        
+        InfoPersonne rip = new InfoPersonne();
+        rip.setNom(jTextField1.getText());
+        rip.setPrenom(jTextField2.getText());
+        List<InfoPersonne> ListIP = pxy.recherchePersonnes(rip, jCheckBox1.isSelected());
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.getDataVector().removeAllElements();
         for(InfoPersonne ip : ListIP)
         {
             Object[] ti = new Object[7];

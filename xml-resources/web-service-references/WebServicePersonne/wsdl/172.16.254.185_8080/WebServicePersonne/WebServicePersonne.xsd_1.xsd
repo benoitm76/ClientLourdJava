@@ -12,9 +12,21 @@
 
 <xs:element name="RecherchePersonneResponse" type="tns:RecherchePersonneResponse"/>
 
+<xs:element name="RecherchePersonnes" type="tns:RecherchePersonnes"/>
+
+<xs:element name="RecherchePersonnesResponse" type="tns:RecherchePersonnesResponse"/>
+
+<xs:element name="RemplirInfoPersonne" type="tns:RemplirInfoPersonne"/>
+
+<xs:element name="RemplirInfoPersonneResponse" type="tns:RemplirInfoPersonneResponse"/>
+
 <xs:element name="hello" type="tns:hello"/>
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="tFinanceur" type="tns:tFinanceur"/>
+
+<xs:element name="tPersonne" type="tns:tPersonne"/>
 
 <xs:element name="test" type="tns:test"/>
 
@@ -64,6 +76,36 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="RemplirInfoPersonne">
+<xs:sequence>
+<xs:element name="arg0" type="tns:tPersonne" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPersonne">
+<xs:sequence>
+<xs:element name="dateDeNaissance" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idFinanceur" type="tns:tFinanceur" minOccurs="0"/>
+<xs:element name="idPersonne" type="xs:int" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="prenom" type="xs:string" minOccurs="0"/>
+<xs:element name="sexe" type="xs:unsignedShort"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tFinanceur">
+<xs:sequence>
+<xs:element name="idFinanceur" type="xs:int" minOccurs="0"/>
+<xs:element name="nomFinanceur" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RemplirInfoPersonneResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:infoPersonne" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="RecherchePersonne">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -76,6 +118,19 @@
 <xs:complexType name="RecherchePersonneResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:infoPersonne" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RecherchePersonnes">
+<xs:sequence>
+<xs:element name="arg0" type="tns:infoPersonne" minOccurs="0"/>
+<xs:element name="arg1" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RecherchePersonnesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:infoPersonne" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
