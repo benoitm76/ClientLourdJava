@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://172.16.254.185:8080/WebServicePersonne/WebServicePersonne" uri="wsdl/172.16.254.185_8080/webservicepersonne/webservicepersonne"/>
+    <system systemId="http://172.16.254.185:8080/WebServicePersonne/WebServicePersonne?WSDL" uri="wsdl/172.16.254.185_8080/webservicepersonne/WebServicePersonne.wsdl"/>
+    <system systemId="http://172.16.254.185:8080/WebServicePersonne/WebServicePersonne?xsd=1" uri="wsdl/172.16.254.185_8080/webservicepersonne/WebServicePersonne.xsd_1.xsd"/>
+</catalog>
