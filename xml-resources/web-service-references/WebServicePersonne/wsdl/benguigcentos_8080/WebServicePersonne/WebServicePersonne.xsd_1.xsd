@@ -86,11 +86,46 @@
 
 <xs:complexType name="infoPersonne">
 <xs:sequence>
+<xs:element name="conseiller" type="tns:infoConseiller" minOccurs="0"/>
 <xs:element name="dateNaissance" type="xs:string" minOccurs="0"/>
+<xs:element name="emplois" type="tns:infoEmploi" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="financeur" type="tns:infoFinanceur" minOccurs="0"/>
 <xs:element name="ID" type="xs:int"/>
 <xs:element name="nom" type="xs:string" minOccurs="0"/>
 <xs:element name="prenom" type="xs:string" minOccurs="0"/>
 <xs:element name="sexe" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="infoConseiller">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="prenom" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="infoEmploi">
+<xs:sequence>
+<xs:element name="dateDebut" type="xs:string" minOccurs="0"/>
+<xs:element name="dateFin" type="xs:string" minOccurs="0"/>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="nom_emploi" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="tns:infoType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="infoType">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="intitule" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="infoFinanceur">
+<xs:sequence>
+<xs:element name="ID" type="xs:int"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

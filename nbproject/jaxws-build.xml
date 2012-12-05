@@ -16,6 +16,23 @@
             <classpath path="${libs.jaxws21.classpath}"/>
         </taskdef>
     </target>
+    <target name="wsimport-client-Utilisateurs" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
+        <property name="wsdl-Utilisateurs" location="xml-resources/web-service-references/Utilisateurs/wsdl/benguigcentos_8080/Utilisateurs/Utilisateurs.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Utilisateurs" destdir="${build.generated.dir}/jax-wsCache/Utilisateurs" wsdl="${wsdl-Utilisateurs}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://benguigcentos:8080/Utilisateurs/Utilisateurs?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Utilisateurs}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Utilisateurs">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Utilisateurs" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/webservices/interne"/>
+    </target>
     <target name="wsimport-client-WebServicePersonne" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WebServicePersonne"/>
         <property name="wsdl-WebServicePersonne" location="xml-resources/web-service-references/WebServicePersonne/wsdl/benguigcentos_8080/WebServicePersonne/WebServicePersonne.wsdl"/>
@@ -33,22 +50,5 @@
         <delete dir="${build.generated.dir}/jax-wsCache/WebServicePersonne"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/com/webservices/externe"/>
     </target>
-    <target name="wsimport-client-Utilisateurs" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
-        <property name="wsdl-Utilisateurs" location="xml-resources/web-service-references/Utilisateurs/wsdl/192.168.9.128_8080/Utilisateurs/Utilisateurs.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Utilisateurs" destdir="${build.generated.dir}/jax-wsCache/Utilisateurs" wsdl="${wsdl-Utilisateurs}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://192.168.9.128:8080/Utilisateurs/Utilisateurs?WSDL" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-Utilisateurs}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Utilisateurs">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-Utilisateurs" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/webservices/interne"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WebServicePersonne, wsimport-client-Utilisateurs"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-Utilisateurs, wsimport-client-WebServicePersonne"/>
 </project>

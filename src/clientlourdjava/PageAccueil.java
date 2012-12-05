@@ -4,8 +4,14 @@
  */
 package clientlourdjava;
 
+import com.utils.Utils;
 import com.webservices.externe.InfoPersonne;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -56,14 +62,14 @@ public class PageAccueil extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nom", "Prénom", "Sexe", "Date de Naissance", "Age", "Source"
+                "ID", "Nom", "Prénom", "Sexe", "Date de Naissance", "Age", "Emploi", "Source"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -183,6 +189,7 @@ public class PageAccueil extends javax.swing.JFrame {
         InfoPersonne rip = new InfoPersonne();
         rip.setNom(jTextField1.getText());
         rip.setPrenom(jTextField2.getText());
+        rip.setDateNaissance(jTextField3.getText());
         if(jComboBox1.getSelectedItem() == "F")
         {
             rip.setSexe(true);
@@ -192,7 +199,7 @@ public class PageAccueil extends javax.swing.JFrame {
         model.getDataVector().removeAllElements();
         for(InfoPersonne ip : ListIP)
         {
-            Object[] ti = new Object[7];
+            Object[] ti = new Object[8];
             ti[0] = ip.getID();
             ti[1] = ip.getNom();
             ti[2] = ip.getPrenom();
@@ -205,6 +212,15 @@ public class PageAccueil extends javax.swing.JFrame {
                 ti[3] = "M";
             }
             ti[4] = ip.getDateNaissance();
+            try {
+                ti[5] = Utils.computeAge(new SimpleDateFormat("dd/MM/yyyy").parse(ip.getDateNaissance()), new Date());
+            } catch (Exception ex) {
+                ti[5] = "";
+            }
+            if(ip.getEmplois().size() >= 1)
+            {
+                ti[6] = ip.getEmplois().get(0).getNomEmploi();
+            }
             model.addRow(ti);           
         }
         jTable1.validate();
