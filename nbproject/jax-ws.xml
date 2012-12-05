@@ -3,8 +3,8 @@
   <services/>
   <clients>
     <client name="Utilisateurs">
-      <wsdl-url>http://benguigcentos:8080/Utilisateurs/Utilisateurs?WSDL</wsdl-url>
-      <local-wsdl-file>benguigcentos_8080/Utilisateurs/Utilisateurs.wsdl</local-wsdl-file>
+      <wsdl-url>http://172.16.254.185:8080/Utilisateurs/Utilisateurs?WSDL</wsdl-url>
+      <local-wsdl-file>172.16.254.185_8080/Utilisateurs/Utilisateurs.wsdl</local-wsdl-file>
       <package-name>com.webservices.interne</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -18,7 +18,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://benguigcentos:8080/Utilisateurs/Utilisateurs?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://172.16.254.185:8080/Utilisateurs/Utilisateurs?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -30,9 +30,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="WebServicePersonne">
-      <wsdl-url>http://benguigcentos:8080/WebServicePersonne/WebServicePersonne?WSDL</wsdl-url>
-      <local-wsdl-file>benguigcentos_8080/WebServicePersonne/WebServicePersonne.wsdl</local-wsdl-file>
+    <client name="PersonneWebService">
+      <wsdl-url>http://172.16.254.185:8080/PersonneWebService/PersonneWebService?WSDL</wsdl-url>
+      <local-wsdl-file>172.16.254.185_8080/PersonneWebService/PersonneWebService.wsdl</local-wsdl-file>
       <package-name>com.webservices.externe</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -46,7 +46,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://benguigcentos:8080/WebServicePersonne/WebServicePersonne?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://172.16.254.185:8080/PersonneWebService/PersonneWebService?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

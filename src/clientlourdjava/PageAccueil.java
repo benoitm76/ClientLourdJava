@@ -20,11 +20,11 @@ public class PageAccueil extends javax.swing.JFrame {
     /**
      * Creates new form PageAccueil
      */
-    private com.webservices.externe.WebServicePersonne pxy;
+    private com.webservices.externe.PersonneWebService pxy;
     public PageAccueil() {
         initComponents();
         this.setLocationRelativeTo(null);
-        pxy = new com.webservices.externe.WebServicePersonne_Service().getWebServicePersonnePort();
+        pxy = new com.webservices.externe.PersonneWebService_Service().getPersonneWebServicePort();
     }
 
     /**

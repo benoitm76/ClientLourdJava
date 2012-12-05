@@ -16,71 +16,14 @@
 
 <xs:element name="RecherchePersonnesResponse" type="tns:RecherchePersonnesResponse"/>
 
-<xs:element name="RemplirInfoPersonne" type="tns:RemplirInfoPersonne"/>
-
-<xs:element name="RemplirInfoPersonneResponse" type="tns:RemplirInfoPersonneResponse"/>
-
 <xs:element name="hello" type="tns:hello"/>
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
 
-<xs:element name="tFinanceur" type="tns:tFinanceur"/>
-
-<xs:element name="tPersonne" type="tns:tPersonne"/>
-
-<xs:element name="test" type="tns:test"/>
-
-<xs:element name="testResponse" type="tns:testResponse"/>
-
-<xs:complexType name="hello">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="helloResponse">
+<xs:complexType name="RecherchePersonnes">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="GetAllPersonnes">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="GetAllPersonnesResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:tPersonne" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="tPersonne">
-<xs:sequence>
-<xs:element name="dateDeNaissance" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="idFinanceur" type="tns:tFinanceur" minOccurs="0"/>
-<xs:element name="idPersonne" type="xs:int" minOccurs="0"/>
-<xs:element name="nom" type="xs:string" minOccurs="0"/>
-<xs:element name="prenom" type="xs:string" minOccurs="0"/>
-<xs:element name="sexe" type="xs:unsignedShort"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="tFinanceur">
-<xs:sequence>
-<xs:element name="idFinanceur" type="xs:int" minOccurs="0"/>
-<xs:element name="nomFinanceur" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="test">
-<xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-<xs:element name="arg1" type="xs:string" minOccurs="0"/>
-<xs:element name="arg2" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="testResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:infoPersonne" minOccurs="0"/>
+<xs:element name="arg0" type="tns:infoPersonne" minOccurs="0"/>
+<xs:element name="arg1" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -129,15 +72,21 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="RemplirInfoPersonne">
+<xs:complexType name="RecherchePersonnesResponse">
 <xs:sequence>
-<xs:element name="arg0" type="tns:tPersonne" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="tns:infoPersonne" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="RemplirInfoPersonneResponse">
+<xs:complexType name="GetPersonne">
 <xs:sequence>
-<xs:element name="return" type="tns:infoPersonne" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetPersonneResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:infoPersonne" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -156,28 +105,23 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="RecherchePersonnes">
-<xs:sequence>
-<xs:element name="arg0" type="tns:infoPersonne" minOccurs="0"/>
-<xs:element name="arg1" type="xs:boolean"/>
-</xs:sequence>
+<xs:complexType name="GetAllPersonnes">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="RecherchePersonnesResponse">
+<xs:complexType name="GetAllPersonnesResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:infoPersonne" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="GetPersonne">
-<xs:sequence>
-<xs:element name="arg0" type="xs:int"/>
-</xs:sequence>
+<xs:complexType name="hello">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="GetPersonneResponse">
+<xs:complexType name="helloResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:infoPersonne" minOccurs="0"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

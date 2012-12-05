@@ -18,8 +18,8 @@
     </target>
     <target name="wsimport-client-Utilisateurs" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
-        <property name="wsdl-Utilisateurs" location="xml-resources/web-service-references/Utilisateurs/wsdl/benguigcentos_8080/Utilisateurs/Utilisateurs.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Utilisateurs" destdir="${build.generated.dir}/jax-wsCache/Utilisateurs" wsdl="${wsdl-Utilisateurs}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://benguigcentos:8080/Utilisateurs/Utilisateurs?WSDL" xnocompile="true" xendorsed="true">
+        <property name="wsdl-Utilisateurs" location="xml-resources/web-service-references/Utilisateurs/wsdl/172.16.254.185_8080/Utilisateurs/Utilisateurs.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Utilisateurs" destdir="${build.generated.dir}/jax-wsCache/Utilisateurs" wsdl="${wsdl-Utilisateurs}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://172.16.254.185:8080/Utilisateurs/Utilisateurs?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-Utilisateurs}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
         </wsimport>
@@ -33,22 +33,22 @@
         <delete dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/com/webservices/interne"/>
     </target>
-    <target name="wsimport-client-WebServicePersonne" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/WebServicePersonne"/>
-        <property name="wsdl-WebServicePersonne" location="xml-resources/web-service-references/WebServicePersonne/wsdl/benguigcentos_8080/WebServicePersonne/WebServicePersonne.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WebServicePersonne" destdir="${build.generated.dir}/jax-wsCache/WebServicePersonne" wsdl="${wsdl-WebServicePersonne}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://benguigcentos:8080/WebServicePersonne/WebServicePersonne?WSDL" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-WebServicePersonne}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/WebServicePersonne"/>
+    <target name="wsimport-client-PersonneWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PersonneWebService"/>
+        <property name="wsdl-PersonneWebService" location="xml-resources/web-service-references/PersonneWebService/wsdl/172.16.254.185_8080/PersonneWebService/PersonneWebService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PersonneWebService" destdir="${build.generated.dir}/jax-wsCache/PersonneWebService" wsdl="${wsdl-PersonneWebService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://172.16.254.185:8080/PersonneWebService/PersonneWebService?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-PersonneWebService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PersonneWebService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/WebServicePersonne">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PersonneWebService">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-WebServicePersonne" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/WebServicePersonne"/>
+    <target name="wsimport-client-clean-PersonneWebService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/PersonneWebService"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/com/webservices/externe"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Utilisateurs, wsimport-client-WebServicePersonne"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-Utilisateurs, wsimport-client-PersonneWebService"/>
 </project>
