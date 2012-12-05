@@ -6,12 +6,9 @@ package clientlourdjava;
 
 import com.utils.Utils;
 import com.webservices.externe.InfoPersonne;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -196,7 +193,7 @@ public class PageAccueil extends javax.swing.JFrame {
         }
         List<InfoPersonne> ListIP = pxy.recherchePersonnes(rip, jCheckBox1.isSelected());
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        model.getDataVector().removeAllElements();
+        model.setRowCount(0);
         for(InfoPersonne ip : ListIP)
         {
             Object[] ti = new Object[8];
@@ -223,7 +220,6 @@ public class PageAccueil extends javax.swing.JFrame {
             }
             model.addRow(ti);           
         }
-        jTable1.validate();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
