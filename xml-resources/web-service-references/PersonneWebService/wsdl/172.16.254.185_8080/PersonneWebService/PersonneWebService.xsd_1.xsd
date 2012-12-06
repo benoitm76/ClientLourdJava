@@ -20,9 +20,17 @@
 
 <xs:element name="RecherchePersonnesResponse" type="tns:RecherchePersonnesResponse"/>
 
-<xs:element name="hello" type="tns:hello"/>
+<xs:element name="addPersonne" type="tns:addPersonne"/>
 
-<xs:element name="helloResponse" type="tns:helloResponse"/>
+<xs:element name="addPersonneResponse" type="tns:addPersonneResponse"/>
+
+<xs:element name="factorielleNombre" type="tns:factorielleNombre"/>
+
+<xs:element name="factorielleNombreResponse" type="tns:factorielleNombreResponse"/>
+
+<xs:element name="hello" nillable="true" type="tns:factorielleNombre"/>
+
+<xs:element name="helloResponse" nillable="true" type="tns:factorielleNombreResponse"/>
 
 <xs:complexType name="RecherchePersonnes">
 <xs:sequence>
@@ -106,6 +114,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addPersonne">
+<xs:sequence>
+<xs:element name="arg0" type="tns:infoPersonne" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPersonneResponse">
+<xs:sequence/>
+</xs:complexType>
+
 <xs:complexType name="RecherchePersonne">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -131,13 +149,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="hello">
-<xs:sequence/>
+<xs:complexType name="factorielleNombre">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="helloResponse">
+<xs:complexType name="factorielleNombreResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>
