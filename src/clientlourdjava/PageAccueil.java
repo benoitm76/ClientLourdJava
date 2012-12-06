@@ -191,7 +191,19 @@ public class PageAccueil extends javax.swing.JFrame {
         {
             rip.setSexe(true);
         }
-        List<InfoPersonne> ListIP = pxy.recherchePersonnes(rip, jCheckBox1.isSelected());
+        else
+        {
+            rip.setSexe(false);
+        }
+        List<InfoPersonne> ListIP = null;
+        if(!jCheckBox1.isSelected())
+        {
+            ListIP = pxy.recherchePersonnes(rip, false);
+        }
+        else
+        {
+            ListIP = pxy.rechercheExtraPersonnes(rip);
+        }
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         model.setRowCount(0);
         for(InfoPersonne ip : ListIP)
@@ -217,6 +229,14 @@ public class PageAccueil extends javax.swing.JFrame {
             if(ip.getEmplois().size() >= 1)
             {
                 ti[6] = ip.getEmplois().get(0).getNomEmploi();
+            }
+            if(!jCheckBox1.isSelected())
+            {
+                ti[7] = "Interne";
+            }
+            else
+            {
+                ti[7] = "Externe";
             }
             model.addRow(ti);           
         }

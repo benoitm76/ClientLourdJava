@@ -8,6 +8,10 @@
 
 <xs:element name="GetPersonneResponse" type="tns:GetPersonneResponse"/>
 
+<xs:element name="RechercheExtraPersonnes" type="tns:RechercheExtraPersonnes"/>
+
+<xs:element name="RechercheExtraPersonnesResponse" type="tns:RechercheExtraPersonnesResponse"/>
+
 <xs:element name="RecherchePersonne" type="tns:RecherchePersonne"/>
 
 <xs:element name="RecherchePersonneResponse" type="tns:RecherchePersonneResponse"/>
@@ -73,6 +77,18 @@
 </xs:complexType>
 
 <xs:complexType name="RecherchePersonnesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:infoPersonne" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RechercheExtraPersonnes">
+<xs:sequence>
+<xs:element name="arg0" type="tns:infoPersonne" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RechercheExtraPersonnesResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:infoPersonne" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>

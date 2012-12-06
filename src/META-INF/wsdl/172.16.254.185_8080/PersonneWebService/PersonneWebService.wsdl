@@ -4,12 +4,6 @@
 <xsd:import namespace="http://externe.webservices.com/" schemaLocation="http://172.16.254.185:8080/PersonneWebService/PersonneWebService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="RecherchePersonnes">
-<part name="parameters" element="tns:RecherchePersonnes"/>
-</message>
-<message name="RecherchePersonnesResponse">
-<part name="parameters" element="tns:RecherchePersonnesResponse"/>
-</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
@@ -34,11 +28,19 @@
 <message name="GetAllPersonnesResponse">
 <part name="parameters" element="tns:GetAllPersonnesResponse"/>
 </message>
+<message name="RecherchePersonnes">
+<part name="parameters" element="tns:RecherchePersonnes"/>
+</message>
+<message name="RecherchePersonnesResponse">
+<part name="parameters" element="tns:RecherchePersonnesResponse"/>
+</message>
+<message name="RechercheExtraPersonnes">
+<part name="parameters" element="tns:RechercheExtraPersonnes"/>
+</message>
+<message name="RechercheExtraPersonnesResponse">
+<part name="parameters" element="tns:RechercheExtraPersonnesResponse"/>
+</message>
 <portType name="PersonneWebService">
-<operation name="RecherchePersonnes">
-<input wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonnesRequest" message="tns:RecherchePersonnes"/>
-<output wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonnesResponse" message="tns:RecherchePersonnesResponse"/>
-</operation>
 <operation name="hello">
 <input wsam:Action="http://externe.webservices.com/PersonneWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://externe.webservices.com/PersonneWebService/helloResponse" message="tns:helloResponse"/>
@@ -55,18 +57,17 @@
 <input wsam:Action="http://externe.webservices.com/PersonneWebService/GetAllPersonnesRequest" message="tns:GetAllPersonnes"/>
 <output wsam:Action="http://externe.webservices.com/PersonneWebService/GetAllPersonnesResponse" message="tns:GetAllPersonnesResponse"/>
 </operation>
+<operation name="RecherchePersonnes">
+<input wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonnesRequest" message="tns:RecherchePersonnes"/>
+<output wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonnesResponse" message="tns:RecherchePersonnesResponse"/>
+</operation>
+<operation name="RechercheExtraPersonnes">
+<input wsam:Action="http://externe.webservices.com/PersonneWebService/RechercheExtraPersonnesRequest" message="tns:RechercheExtraPersonnes"/>
+<output wsam:Action="http://externe.webservices.com/PersonneWebService/RechercheExtraPersonnesResponse" message="tns:RechercheExtraPersonnesResponse"/>
+</operation>
 </portType>
 <binding name="PersonneWebServicePortBinding" type="tns:PersonneWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="RecherchePersonnes">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="hello">
 <soap:operation soapAction=""/>
 <input>
@@ -95,6 +96,24 @@
 </output>
 </operation>
 <operation name="GetAllPersonnes">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="RecherchePersonnes">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="RechercheExtraPersonnes">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
