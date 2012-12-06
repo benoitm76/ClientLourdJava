@@ -11,8 +11,11 @@
     <system systemId="http://benguigcentos:8080/Utilisateurs/Utilisateurs?xsd=1" uri="wsdl/benguigcentos_8080/Utilisateurs/Utilisateurs.xsd_1.xsd"/>
     <system systemId="http://172.16.254.185:8080/WSPersonne/WSPersonne?Tester" uri="xml-resources/web-service-references/WSPersonne_Tester/wsdl/172.16.254.185_8080/WSPersonne/WSPersonne.tester"/>
     <system systemId="http://benguigcentos:8080/WSPersonne/WSPersonne?Tester" uri="xml-resources/web-service-references/WSPersonne_Tester/wsdl/benguigcentos_8080/WSPersonne/WSPersonne.tester"/>
-    <system systemId="http://172.16.254.185:8080/PersonneWebService/PersonneWebService?WSDL" uri="wsdl/172.16.254.185_8080/PersonneWebService/PersonneWebService.wsdl"/>
-    <system systemId="http://172.16.254.185:8080/PersonneWebService/PersonneWebService?xsd=1" uri="wsdl/172.16.254.185_8080/PersonneWebService/PersonneWebService.xsd_1.xsd"/>
     <system systemId="http://172.16.254.185:8080/Utilisateurs/Utilisateurs?WSDL" uri="wsdl/172.16.254.185_8080/Utilisateurs/Utilisateurs.wsdl"/>
     <system systemId="http://172.16.254.185:8080/Utilisateurs/Utilisateurs?xsd=1" uri="wsdl/172.16.254.185_8080/Utilisateurs/Utilisateurs.xsd_1.xsd"/>
+    <system systemId="http://172.16.254.185:8080/PersonneWebService/PersonneWebService?WSDL" uri="wsdl/172.16.254.185_8080/PersonneWebService/PersonneWebService.wsdl"/>
+    <system systemId="http://172.16.254.185:8080/PersonneWebService/PersonneWebService?xsd=1" uri="wsdl/172.16.254.185_8080/PersonneWebService/PersonneWebService.xsd_1.xsd"/>
+    <system systemId="http://benguigcentos:8080/PersonneWebService/PersonneWebService?Tester" uri="wsdl/benguigcentos_8080/PersonneWebService/PersonneWebService.tester"/>
+    <system systemId="http://benguigcentos:8080/PersonneWebService/PersonneWebService?WSDL" uri="wsdl/benguigcentos_8080/PersonneWebService/PersonneWebService.wsdl"/>
+    <system systemId="http://benguigcentos:8080/PersonneWebService/PersonneWebService?xsd=1" uri="wsdl/benguigcentos_8080/PersonneWebService/PersonneWebService.xsd_1.xsd"/>
 </catalog>

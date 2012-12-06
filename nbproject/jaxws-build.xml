@@ -18,8 +18,8 @@
     </target>
     <target name="wsimport-client-Utilisateurs" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
-        <property name="wsdl-Utilisateurs" location="xml-resources/web-service-references/Utilisateurs/wsdl/172.16.254.185_8080/Utilisateurs/Utilisateurs.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Utilisateurs" destdir="${build.generated.dir}/jax-wsCache/Utilisateurs" wsdl="${wsdl-Utilisateurs}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://172.16.254.185:8080/Utilisateurs/Utilisateurs?WSDL" xnocompile="true" xendorsed="true">
+        <property name="wsdl-Utilisateurs" location="xml-resources/web-service-references/Utilisateurs/wsdl/benguigcentos_8080/Utilisateurs/Utilisateurs.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Utilisateurs" destdir="${build.generated.dir}/jax-wsCache/Utilisateurs" wsdl="${wsdl-Utilisateurs}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://benguigcentos:8080/Utilisateurs/Utilisateurs?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-Utilisateurs}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/Utilisateurs"/>
         </wsimport>
@@ -35,8 +35,8 @@
     </target>
     <target name="wsimport-client-PersonneWebService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/PersonneWebService"/>
-        <property name="wsdl-PersonneWebService" location="xml-resources/web-service-references/PersonneWebService/wsdl/172.16.254.185_8080/PersonneWebService/PersonneWebService.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PersonneWebService" destdir="${build.generated.dir}/jax-wsCache/PersonneWebService" wsdl="${wsdl-PersonneWebService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://172.16.254.185:8080/PersonneWebService/PersonneWebService?WSDL" xnocompile="true" xendorsed="true">
+        <property name="wsdl-PersonneWebService" location="xml-resources/web-service-references/PersonneWebService/wsdl/benguigcentos_8080/PersonneWebService/PersonneWebService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PersonneWebService" destdir="${build.generated.dir}/jax-wsCache/PersonneWebService" wsdl="${wsdl-PersonneWebService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://benguigcentos:8080/PersonneWebService/PersonneWebService?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-PersonneWebService}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/PersonneWebService"/>
         </wsimport>

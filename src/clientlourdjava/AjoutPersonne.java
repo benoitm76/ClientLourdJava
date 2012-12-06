@@ -147,6 +147,7 @@ public class AjoutPersonne extends javax.swing.JFrame {
         com.webservices.externe.PersonneWebService port = service.getPersonneWebServicePort();
         port.addPersonne(ip);
         JOptionPane.showMessageDialog(this, "La personne a bien été ajoutée.", "Personne Ajouté", JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
